@@ -30,8 +30,22 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TiU-77-Ygb">
+                                <rect key="frame" x="20" y="33" width="173" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuW-2O-6kK">
+                                <rect key="frame" x="82" y="82" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addText" destination="BYZ-38-t0r" eventType="touchUpInside" id="c5b-7C-HZ1"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baS-nF-vuB">
-                                <rect key="frame" x="268" y="55" width="45" height="30"/>
+                                <rect key="frame" x="269" y="82" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Delete"/>
                                 <connections>
@@ -49,8 +63,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="deleteButton" destination="baS-nF-vuB" id="abC-W1-Sb8"/>
                         <outlet property="table" destination="HXq-FA-OW3" id="Q1C-Jv-DEG"/>
+                        <outlet property="textInput" destination="TiU-77-Ygb" id="p7Z-X4-kz3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

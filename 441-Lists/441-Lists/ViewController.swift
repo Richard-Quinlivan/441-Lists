@@ -10,7 +10,8 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var table: UITableView!
-    @IBOutlet weak var deleteButton: UIButton!
+    
+    @IBOutlet weak var textInput: UITextField!
     
     var items = ["Test1", "Test2", "Test3", "Test4", "Test5", "Test6"]
         
@@ -27,12 +28,10 @@ class ViewController: UIViewController {
     
     @IBAction func deleteRows(){
         let selectedIndexes:[IndexPath] = table.indexPathsForSelectedRows ?? []
-//        print(selectedIndexes)
         var deleteRow = 0
         if(selectedIndexes.count > 0){
             var i = 0
             while i < items.count{
-                print(items[i], table.cellForRow(at: selectedIndexes[deleteRow])?.textLabel!.text)
                 if(items[i] == table.cellForRow(at: selectedIndexes[deleteRow])?.textLabel!.text){
                     items = items.filter{$0 != items[i]}
                     i -= 1
@@ -44,8 +43,12 @@ class ViewController: UIViewController {
                 i += 1
             }
             table.deleteRows(at: selectedIndexes, with: .right)
-
         }
+    }
+    
+    @IBAction func addText(){
+        items.append(textInput.text!)
+        table.reloadData()
     }
 }
 
